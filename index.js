@@ -2,6 +2,7 @@ const axios = require('axios').default;
 
 /**
  * Triggered from a message on a Cloud Pub/Sub topic.
+ * Send message to discord server using webhooks.
  *
  * @param {!Object} event Event payload.
  * @param {!Object} context Metadata for the event.
