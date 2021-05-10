@@ -28,6 +28,7 @@ jobs:
         with:
           name: discord-notifications
           runtime: nodejs14
+          entry_point: sendMessage
           credentials: ${{ secrets.GCP_CREDENTIALS }}
           event_trigger_type: providers/cloud.pubsub/eventTypes/topic.publish
           event_trigger_resource: projects/${{ secrets.GCP_PROJECT }}/topics/${{ secrets.TOPIC }}
