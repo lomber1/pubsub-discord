@@ -6,7 +6,7 @@ const axios = require('axios').default;
  * @param {!Object} event Event payload.
  * @param {!Object} context Metadata for the event.
  */
-exports.helloPubSub = (event, context) => {
+exports.sendMessage = (event, context) => {
   const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK || null;
 
   if (DISCORD_WEBHOOK === null) {
