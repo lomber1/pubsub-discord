@@ -33,3 +33,4 @@ jobs:
           event_trigger_resource: projects/${{ secrets.GCP_PROJECT }}/topics/${{ secrets.TOPIC }}
           env_vars: DISCORD_WEBHOOK=${{ secrets.DISCORD_WEBHOOK }}
           region: europe-central2
+          timeout: 5
