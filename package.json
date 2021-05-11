@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx functions-framework --target=helloPubSub --signature-type=event --port 9090"
+    "start": "npx functions-framework --target=sendMessage --signature-type=event --port 9090"
   },
   "keywords": [],
   "author": "",
