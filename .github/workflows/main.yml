@@ -19,17 +19,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Deploy a Background Cloud Function
-        id: deploy-background-function
-        uses: google-github-actions/deploy-cloud-functions@v0.1.0
+      - id: Deploy
+        uses: google-github-actions/deploy-cloud-functions@main
         with:
+          credentials: ${{ secrets.GCP_CREDENTIALS }}
           name: discord-notifications
           runtime: nodejs14
           entry_point: sendMessage
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
           event_trigger_type: providers/cloud.pubsub/eventTypes/topic.publish
           event_trigger_resource: projects/${{ secrets.GCP_PROJECT }}/topics/${{ secrets.TOPIC }}
           env_vars: DISCORD_WEBHOOK=${{ secrets.DISCORD_WEBHOOK }}
